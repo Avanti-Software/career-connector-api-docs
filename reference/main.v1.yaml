@@ -1,7 +1,13 @@
 openapi: 3.0.0
 info:
-  title: main.v1.json
+  title: Avanti Career Connector API Reference
+  description: Avanti Career Connector API
   version: '1.0'
+  termsOfService: https://www.avanti.ca/api-terms-of-use
+  contact:
+    name: Avanti Support
+    url: https://avanti.ca
+    email: support@avanti.ca
 servers:
   - url: 'http://localhost:3000'
 paths:
