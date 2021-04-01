@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "docs/intro.md"
+    },
+    {
       "type": "divider",
       "title": "APIS"
     },
