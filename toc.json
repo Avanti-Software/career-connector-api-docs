@@ -6,12 +6,8 @@
       "uri": "docs/intro.md"
     },
     {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
       "type": "item",
-      "title": "main.v1.json",
+      "title": "API",
       "uri": "reference/main.v1.yaml"
     }
   ]

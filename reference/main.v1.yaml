@@ -7,7 +7,7 @@ servers:
 paths:
   /job/search:
     get:
-      summary: Your GET endpoint
+      summary: Get Jobs
       tags: []
       responses:
         '200':
@@ -94,7 +94,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
+      summary: Get Job Details
       tags: []
       responses:
         '200':
