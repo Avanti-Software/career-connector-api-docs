@@ -1,0 +1,397 @@
+openapi: 3.0.0
+info:
+  title: main.v1.json
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /job/search:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    Job:
+                      type: string
+                      minLength: 1
+                    Title:
+                      type: string
+                      minLength: 1
+                    Location:
+                      type: string
+                      minLength: 1
+                    LocationCode:
+                      type: string
+                      minLength: 1
+                    ClosingDate:
+                      type: string
+                    Category:
+                      type: string
+                      minLength: 1
+                    ApplyUrl:
+                      type: string
+                      minLength: 1
+                  required:
+                    - Job
+                    - Title
+                    - Location
+                    - LocationCode
+                    - ClosingDate
+                    - Category
+              examples:
+                Example:
+                  value:
+                    - Job: 7761B
+                      Title: Task7761 - OPening
+                      Location: Vancouver
+                      LocationCode: '02  '
+                      ClosingDate: ''
+                      Category: '06                  '
+                      ApplyUrl: 'https://www.myavanti.ca/av-testing-careers/apply/7761B'
+                    - Job: wh03
+                      Title: Warehouse Supervisor - North Calgary
+                      Location: North Calgary
+                      LocationCode: '1000'
+                      ClosingDate: ''
+                      Category: '06                  '
+                      ApplyUrl: 'https://www.myavanti.ca/av-testing-careers/apply/wh03'
+      operationId: get-jobs-search
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: keyword
+          description: Filter jobs by their title.
+        - schema:
+            type: string
+          in: query
+          name: category
+          description: Category code to filter the jobs by.
+        - schema:
+            type: string
+          in: query
+          name: location
+          description: ' Location code to filter jobs by.'
+      description: Returns a list of available jobs.
+    parameters: []
+  '/job/getdetails/{code}':
+    parameters:
+      - schema:
+          type: string
+        name: code
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  Company:
+                    type: string
+                    minLength: 1
+                  CompanyAddress1:
+                    type: string
+                    minLength: 1
+                  CompanyAddress2:
+                    type: string
+                    minLength: 1
+                  CompanyCity:
+                    type: string
+                    minLength: 1
+                  CompanyProvince:
+                    type: string
+                    minLength: 1
+                  CompanyCountry:
+                    type: string
+                    minLength: 1
+                  CompanyPostal:
+                    type: string
+                    minLength: 1
+                  Code:
+                    type: string
+                    minLength: 1
+                  Description:
+                    type: string
+                    minLength: 1
+                  JobClass:
+                    type: string
+                    minLength: 1
+                  JobClassDescription:
+                    type: string
+                    minLength: 1
+                  Position:
+                    type: string
+                    minLength: 1
+                  PositionDescription:
+                    type: string
+                    minLength: 1
+                  Location:
+                    type: string
+                    minLength: 1
+                  LocationDescription:
+                    type: string
+                    minLength: 1
+                  Union:
+                    type: string
+                  Status:
+                    type: string
+                    minLength: 1
+                  OpeningDate:
+                    type: string
+                    minLength: 1
+                  ClosingDate: {}
+                  RequiredDate:
+                    type: string
+                  ContactName:
+                    type: string
+                  JobCommentLabel:
+                    type: string
+                    minLength: 1
+                  JobComment:
+                    type: string
+                  JobComment2Label:
+                    type: string
+                    minLength: 1
+                  JobComment2:
+                    type: string
+                    minLength: 1
+                  JobComment3Label:
+                    type: string
+                    minLength: 1
+                  JobComment3:
+                    type: string
+                  JobComment4Label:
+                    type: string
+                  JobComment4:
+                    type: string
+                  JobComment5Label:
+                    type: string
+                    minLength: 1
+                  JobComment5:
+                    type: string
+                  JobComment6Label:
+                    type: string
+                    minLength: 1
+                  JobComment6:
+                    type: string
+                    minLength: 1
+                  JobComment7Label:
+                    type: string
+                    minLength: 1
+                  JobComment7:
+                    type: string
+                  JobClassRateGridDescription: {}
+                  JobClassMinRate:
+                    type: string
+                    minLength: 1
+                  JobClassMidRate:
+                    type: string
+                    minLength: 1
+                  JobClassMaxRate:
+                    type: string
+                    minLength: 1
+                  JobClassRatePer:
+                    type: string
+                    minLength: 1
+                  JobClassOccupation:
+                    type: string
+                    minLength: 1
+                  JobClassOccupationDescription: {}
+                  JobClassComment:
+                    type: string
+                    minLength: 1
+                  WebTemplate:
+                    type: string
+                  ApplyUrl: {}
+                  Requirements:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      required:
+                        - Type
+                        - Code
+                        - Description
+                        - TypeDescription
+                        - Status
+                      properties:
+                        Type:
+                          type: string
+                          minLength: 1
+                        Code:
+                          type: string
+                          minLength: 1
+                        Description:
+                          type: string
+                          minLength: 1
+                        TypeDescription:
+                          type: string
+                          minLength: 1
+                        Status:
+                          type: string
+                          minLength: 1
+                required:
+                  - Company
+                  - CompanyAddress1
+                  - CompanyAddress2
+                  - CompanyCity
+                  - CompanyProvince
+                  - CompanyCountry
+                  - CompanyPostal
+                  - Code
+                  - Description
+                  - JobClass
+                  - JobClassDescription
+                  - Position
+                  - PositionDescription
+                  - Location
+                  - LocationDescription
+                  - Union
+                  - Status
+                  - OpeningDate
+                  - RequiredDate
+                  - ContactName
+                  - JobCommentLabel
+                  - JobComment
+                  - JobComment2Label
+                  - JobComment2
+                  - JobComment3Label
+                  - JobComment3
+                  - JobComment4Label
+                  - JobComment4
+                  - JobComment5Label
+                  - JobComment5
+                  - JobComment6Label
+                  - JobComment6
+                  - JobComment7Label
+                  - JobComment7
+                  - JobClassMinRate
+                  - JobClassMidRate
+                  - JobClassMaxRate
+                  - JobClassRatePer
+                  - JobClassOccupation
+                  - JobClassComment
+                  - WebTemplate
+                  - Requirements
+              examples:
+                Example:
+                  value:
+                    Company: Payroll Company1
+                    CompanyAddress1: 200 Quarry Park Blvd SE
+                    CompanyAddress2: Suite 100
+                    CompanyCity: Calgary
+                    CompanyProvince: AB
+                    CompanyCountry: CAN
+                    CompanyPostal: T2C 5E3
+                    Code: wh03
+                    Description: Warehouse Supervisor - North Calgary
+                    JobClass: '06'
+                    JobClassDescription: English description on a job class with french
+                    Position: '3001'
+                    PositionDescription: Warehouse Supervisor
+                    Location: '06'
+                    LocationDescription: North Calgary
+                    Union: ''
+                    Status: Open
+                    OpeningDate: /Date(1525413600000)/
+                    ClosingDate: null
+                    RequiredDate: ''
+                    ContactName: ''
+                    JobCommentLabel: Company Overview
+                    JobComment: ''
+                    JobComment2Label: Overview of Responsibilities
+                    JobComment2: fakjdl;
+                    JobComment3Label: Competencies and Qualifications
+                    JobComment3: ''
+                    JobComment4Label: ''
+                    JobComment4: ''
+                    JobComment5Label: Overview of Responsibilities
+                    JobComment5: ''
+                    JobComment6Label: Qualifications
+                    JobComment6: teste bare min
+                    JobComment7Label: Training Period
+                    JobComment7: ''
+                    JobClassRateGridDescription: null
+                    JobClassMinRate: '55,000.00'
+                    JobClassMidRate: '60,000.00'
+                    JobClassMaxRate: '65,000.00'
+                    JobClassRatePer: Year
+                    JobClassOccupation: '0014'
+                    JobClassOccupationDescription: null
+                    JobClassComment: "The Vice President of Marketing for West Edmonton Mall has the responsibility of acting as the driving force to lead with innovative thinking and creative problem solving to develop clearly defined marketing and communications strategies to support continual business growth and enhance the company’s brand awareness. This role is also responsible for direct and inspiring our talented marketing team across the diverse marketing functions to achieve the business objectives of increased sales, growth, profitability, and visibility of West Edmonton Mall’s products, events and services.\r\n\r\nPrimary Responsibilities:\r\n• Creating, and leading all marketing strategies while developing tactical plans to exceed marketing expectations and position West Edmonton Mall as a true innovative and leader in the industry.\r\n• Developing various forms of local, national and international advertising campaigns, sponsorship programs, and mutually beneficial business partnerships to target key segments to increase and strengthen brand awareness, customer buy-in, engagement, visit frequency, and duration of stay through both traditional marketing methods as well as a high level of focus and energy dedicated towards digital marketing strategies, campaigns and technology. \r\n• Leading, managing and inspiring the staff of the integrated marketing team including professionals in the retail, attractions, hotels, events, tourism graphic design, public and community relations, interactive and digital and social media marketing divisions within the department. \r\n• Conducting business presentations and campaign pitches while being called upon for public speaking opportunities and acting as a media spokesperson to help further enhance West Edmonton Mall’s public image within various markets and industries.  \r\n• Analyzing and evaluating both existing and potential marketing promotions, strategies, business alliances, events, and loyalty programs while achieving targeted results and ensuring timely and effective execution of marketing tactics and programs.\r\n• Integrating new and innovative marketing related technologies and enhancements to improve the user experience and maximize the operational performance of all marketing activities and programs while ensuring that objectives are achieved within budgets. \r\n• Overseeing all media planning and buying while measuring KPIs in collaboration with West Edmonton Mall tenants, external clients, vendors, entertainment liaisons and talent for various events and campaigns.    \r\n• Working on various company related marketing based projects and responsibilities as required. \r\n\r\nDesired Qualifications:\r\n• A minimum of ten (10) years of experience in Senior Management/Executive level marketing positions with large, multi-faceted, fast paced and ever evolving business environments with well-known brand identities. \r\n• A degree in marketing, commerce, communications or a related discipline to the role from a respected post-secondary institution.\r\n• An innovative, creative and self-driven marketing professional with the ability to lead various teams, projects and manage multiple simultaneous priorities.\r\n• Brand development experience and extensive interactive and digital marketing strategy expertise with a strong knowledge of various social media platforms, integration campaigns and strategy development is required.\r\n• An established professional and respected member of the marketing community with strong business relationships, connections and industry contacts. \r\n• Excellent communication and negotiation skills with experience in media buying and a high level of comfort with acting as a public spokesperson are required. \r\n• Working knowledge of the marketing needs for the shopping center, retail, attractions, tourism/destinations, or entertainment industries is a definite asset for the role.\r\nTerms of Employment:\r\n•This is a full-time, salaried position that will depend on experience and qualifications. \r\n•Must be able to pass a basic security clearance."
+                    WebTemplate: ''
+                    ApplyUrl: null
+                    Requirements:
+                      - Type: Course
+                        Code: 'ACT2              '
+                        Description: English description of code with french
+                        TypeDescription: Course English description of code with french
+                        Status: Required Before Job Starts
+                      - Type: Course
+                        Code: 'ACTE              '
+                        Description: No FR No Course type - Emp descrioption
+                        TypeDescription: Course No FR No Course type - Emp descrioption
+                        Status: Required within 12 days after job starts
+                      - Type: Course
+                        Code: 'COPYFRE           '
+                        Description: English descripotion - use EE Description
+                        TypeDescription: Course English descripotion - use EE Description
+                        Status: Required Before Job Starts
+                      - Type: Course
+                        Code: 'TEST              '
+                        Description: test
+                        TypeDescription: Course test
+                        Status: Required within 100 days after job starts
+                      - Type: Certificate
+                        Code: 'COPY CODE         '
+                        Description: Code with French - english description
+                        TypeDescription: Certificate Code with French - english description
+                        Status: Required Before Job Starts
+                      - Type: Education
+                        Code: 'TEST     AUTM     '
+                        Description: 'English description of code with French '
+                        TypeDescription: 'Education English description of code with French '
+                        Status: Required Before Job Starts
+                      - Type: Skill
+                        Code: 'ACTE     0        '
+                        Description: 'French description '
+                        TypeDescription: 'Skill French description '
+                        Status: Required Before Job Starts
+                      - Type: License
+                        Code: 'BOIL              '
+                        Description: No Expiry
+                        TypeDescription: License No Expiry
+                        Status: Required Before Job Starts
+                      - Type: License
+                        Code: 'LICENSE           '
+                        Description: English description of french code
+                        TypeDescription: License English description of french code
+                        Status: Required Before Job Starts
+                      - Type: Membership
+                        Code: 'NEW               '
+                        Description: english description - Code with French
+                        TypeDescription: Membership english description - Code with French
+                        Status: Required Before Job Starts
+      operationId: get-job-getdetails-code
+      description: Returns the job details for a provided requisition code.
+components:
+  schemas: {}
