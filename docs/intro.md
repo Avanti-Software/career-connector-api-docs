@@ -13,6 +13,6 @@ Creating an integration requires a developer familiar with leveraging API endpoi
 
 We would love to hear any feedback about your experience using the Career Connector API. Please email us at [AppFeedback@avanti.ca](mailto:appfeedback@avanti.ca) to help us improve our API. 
 
-## Need Support
+## Need Help
 
-Having issues using the Career Connector API? Please reach out to [Avanti Support](mailto:support@avanti.ca) if you are a client requiring assistance. 
+Having issues using the Career Connector API? Please reach out to [Avanti Care](https://help.avanti.ca/support/tickets/new) if you are a client requiring assistance.
