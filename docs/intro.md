@@ -15,4 +15,4 @@ We would love to hear any feedback about your experience using the Career Connec
 
 ## Need Help
 
-Having issues using the Career Connector API? Please reach out to [Avanti Care](https://help.avanti.ca/support/tickets/new) if you are a client requiring assistance.
+Having issues using the Career Connector API? Please reach out to [Client Care](https://help.avanti.ca/support/tickets/new) if you are a client requiring assistance.
