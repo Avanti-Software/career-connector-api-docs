@@ -7,7 +7,7 @@ info:
   contact:
     name: Client Care
     url: 'https://avanti.ca'
-    email: 'https://help.avanti.ca/support/tickets/new'
+    email: care@avanti.ca
 servers:
   - url: 'http://localhost:3000'
 paths:
